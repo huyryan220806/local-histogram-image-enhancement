@@ -59,7 +59,7 @@ Dưới đây là kết quả đo đạc trung bình trên bộ dữ liệu ản
 
 ---
 
-## 📈 Đánh Giá Ưu & Nhược Điểm
+## Đánh Giá Ưu & Nhược Điểm
 
 ### 1. Global Histogram Equalization (Toàn cục)
 * **Ưu điểm**: Cực kỳ đơn giản, tốc độ tính toán nhanh, không cần tinh chỉnh tham số đầu vào.
@@ -79,12 +79,12 @@ Dưới đây là kết quả đo đạc trung bình trên bộ dữ liệu ản
 
 ---
 
-## Tác giả
+### Tác giả
 * Họ và tên: **Nguyễn Đình Huy**
 * Mã số sinh viên: **2474802010140**
 * Khoa: Công Nghệ Thông Tin
 * Trường Đại học Văn Lang (VLU)
-## Đồng tác giả
+### Đồng tác giả
 * Họ và tên: **Lê Quyết Tiến**
 * Mã số sinh viên: **2474802010386**
 * Khoa: Công Nghệ Thông Tin
