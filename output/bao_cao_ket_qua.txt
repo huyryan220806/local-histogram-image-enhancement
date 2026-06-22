@@ -1,0 +1,161 @@
+================================================================================
+  BÁO CÁO KẾT QUẢ - TĂNG CƯỜNG ẢNH CỤC BỘ DỰA TRÊN HISTOGRAM
+  Chủ đề 6: Tăng cường ảnh cục bộ dựa trên histogram
+================================================================================
+
+1. CƠ SỞ LÝ THUYẾT
+----------------------------------------
+
+1.1. Histogram Equalization toàn cục (Global HE)
+  - Tính histogram h(k) cho toàn bộ ảnh
+  - Tính CDF: C(k) = sum(h(i)) for i=0..k
+  - Ánh xạ: s(k) = round((C(k) - C_min) / (M*N - C_min) * (L-1))
+  - Kết quả: histogram đầu ra phân bố đều hơn
+
+1.2. CLAHE (Contrast Limited Adaptive Histogram Equalization)
+  - Chia ảnh thành các tile (block) nhỏ
+  - Tính histogram riêng cho từng tile
+  - Clip histogram: giới hạn giá trị tối đa mỗi bin
+  - Phân phối lại phần bị clip cho tất cả bin
+  - Nội suy bilinear tại biên tile → tránh block artifact
+  - Tham số chính: clipLimit, tileGridSize
+
+2. KẾT QUẢ ĐÁNH GIÁ ĐỊNH LƯỢNG
+----------------------------------------
+
+Ảnh      PP               Mean      Std    Entropy       PSNR       SSIM
+--------------------------------------------------------------------
+#1       Gốc             121.4     73.9       6.21        ---        ---
+         Global HE       128.8     74.9       5.93      16.64     0.4453
+         CLAHE           134.0     74.9       7.18      22.83     0.7424
+
+#2       Gốc               2.1      6.3       1.56        ---        ---
+         Global HE        58.2     86.8       1.54       8.09     0.3659
+         CLAHE             8.0     10.9       1.79      30.33     0.4007
+
+#3       Gốc              99.0     52.9       7.60        ---        ---
+         Global HE       128.2     73.6       7.45      16.82     0.9132
+         CLAHE           123.1     61.8       7.89      16.84     0.7643
+
+#4       Gốc             114.0     71.4       7.68        ---        ---
+         Global HE       128.2     73.5       7.46      23.14     0.9237
+         CLAHE           122.3     65.7       7.86      17.91     0.8110
+
+#5       Gốc             197.1     40.9       6.87        ---        ---
+         Global HE       128.7     74.0       6.80      10.08     0.6293
+         CLAHE           156.2     62.1       7.81      14.05     0.7520
+
+#6       Gốc              88.8     50.0       7.39        ---        ---
+         Global HE       128.4     73.7       7.13      14.20     0.8340
+         CLAHE           116.1     57.7       7.79      16.64     0.8025
+
+#7       Gốc             109.1     11.5       5.04        ---        ---
+         Global HE       122.7     77.4       5.03      11.56     0.4421
+         CLAHE           113.9     27.1       6.64      23.47     0.8403
+
+#8       Gốc              42.7     64.5       4.15        ---        ---
+         Global HE        56.2     79.6       4.03      21.06     0.8881
+         CLAHE            48.6     67.3       4.52      21.21     0.4719
+
+#9       Gốc              72.8    115.2       0.86        ---        ---
+         Global HE        72.8    115.2       0.86        inf     1.0000
+         CLAHE            75.7    113.4       0.86      37.55     0.8887
+
+#10      Gốc              75.9     37.4       6.74        ---        ---
+         Global HE       128.9     72.7       6.55      11.18     0.6077
+         CLAHE           100.7     44.2       7.43      17.44     0.7260
+
+#11      Gốc              94.0     75.0       6.31        ---        ---
+         Global HE        94.7     84.8       6.18      21.40     0.8895
+         CLAHE            96.3     81.6       6.92      22.44     0.7559
+
+#12      Gốc             115.1     47.2       6.31        ---        ---
+         Global HE       129.1     73.8       6.22      16.92     0.7884
+         CLAHE           120.8     51.0       7.60      22.80     0.9150
+
+#13      Gốc             124.7     56.3       6.88        ---        ---
+         Global HE       129.2     72.3       6.66      18.45     0.7722
+         CLAHE           119.9     64.3       7.69      20.45     0.8205
+
+#14      Gốc             118.8     54.9       7.68        ---        ---
+         Global HE       128.2     73.2       7.52      20.88     0.9269
+         CLAHE           129.4     62.5       7.90      16.67     0.7745
+
+#15      Gốc             169.7     54.5       6.91        ---        ---
+         Global HE       128.8     74.2       6.85      14.79     0.8498
+         CLAHE           154.5     66.0       7.75      19.58     0.8988
+
+#16      Gốc             146.0     71.2       7.55        ---        ---
+         Global HE       129.8     71.9       7.33      21.59     0.8837
+         CLAHE           150.7     62.3       7.79      17.30     0.7732
+
+#17      Gốc             116.9     53.7       6.76        ---        ---
+         Global HE       129.0     73.5       6.63      20.38     0.9093
+         CLAHE           123.9     59.0       7.76      24.65     0.9235
+
+#18      Gốc              20.7     67.8       1.70        ---        ---
+         Global HE        30.0     67.3       1.69      17.02     0.7165
+         CLAHE            26.0     65.9       1.85      29.86     0.5070
+
+#19      Gốc              83.4     65.4       7.58        ---        ---
+         Global HE       121.7     76.9       7.34      15.03     0.8426
+         CLAHE           118.5     74.9       7.84      15.15     0.8096
+
+
+3. METRICS TRUNG BÌNH TRÊN TOÀN BỘ ẢNH
+----------------------------------------
+
+  Metric             Global HE        CLAHE      Tốt hơn
+  ---------------------------------------------------
+  PSNR (dB)                inf        21.43    Global HE
+  SSIM                  0.7699       0.7567    Global HE
+  Entropy                 5.75         6.47        CLAHE
+  Std Dev                 77.3         61.7          ---
+
+
+4. NHẬN XÉT ƯU ĐIỂM VÀ HẠN CHẾ
+----------------------------------------
+
+4.1. Global Histogram Equalization
+
+  ƯU ĐIỂM:
+  + Đơn giản, dễ cài đặt
+  + Tốc độ xử lý nhanh (tính toán trên toàn bộ ảnh 1 lần)
+  + Hiệu quả với ảnh có độ tương phản thấp đồng đều
+  + Không có tham số cần điều chỉnh
+
+  HẠN CHẾ:
+  - Không hiệu quả với ảnh có độ sáng không đồng đều
+  - Có thể làm mất chi tiết ở vùng sáng hoặc tối
+  - Histogram sau xử lý không thực sự phân bố đều
+  - Dễ khuếch đại nhiễu nếu ảnh có vùng đồng nhất lớn
+  - Không bảo toàn tốt cấu trúc cục bộ (SSIM thấp hơn CLAHE)
+
+4.2. CLAHE (Contrast Limited Adaptive Histogram Equalization)
+
+  ƯU ĐIỂM:
+  + Cải thiện chi tiết cục bộ hiệu quả
+  + Bảo toàn cấu trúc tổng thể tốt hơn (SSIM cao hơn)
+  + Tránh khuếch đại nhiễu nhờ clip limit
+  + Linh hoạt: điều chỉnh clipLimit và tileGridSize
+  + Xử lý tốt ảnh có độ sáng không đồng đều
+  + Tránh hiệu ứng khối nhờ nội suy bilinear
+
+  HẠN CHẾ:
+  - Phức tạp hơn Global HE
+  - Tốc độ xử lý chậm hơn (xử lý nhiều tile)
+  - Cần chọn tham số phù hợp (clipLimit, tileGridSize)
+  - Với tileGridSize quá nhỏ → hiệu quả gần Global HE
+  - Với tileGridSize quá lớn → quá cục bộ, có thể gây artifact
+
+4.3. So sánh trực tiếp
+
+  → Global HE bảo toàn cấu trúc tốt hơn (SSIM: 0.7699 > 0.7567)
+  → Global HE có PSNR cao hơn (inf > 21.43 dB)
+
+  → CLAHE phù hợp hơn cho ảnh có độ sáng/tương phản không đồng đều
+  → Global HE phù hợp cho ảnh có độ tương phản thấp đồng đều
+
+================================================================================
+  HẾT BÁO CÁO
+================================================================================
