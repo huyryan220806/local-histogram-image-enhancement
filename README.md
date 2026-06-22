@@ -8,7 +8,7 @@ Dự án triển khai, so sánh và đánh giá hai thuật toán:
 
 ---
 
-## 🛠️ Cấu Trúc Mã Nguồn
+## Cấu Trúc Mã Nguồn
 
 | File | Chức năng |
 | :--- | :--- |
@@ -21,7 +21,7 @@ Dự án triển khai, so sánh và đánh giá hai thuật toán:
 
 ---
 
-## 🚀 Hướng Dẫn Cài Đặt & Chạy
+## Hướng Dẫn Cài Đặt & Chạy
 
 ### 1. Yêu cầu hệ thống
 * **Python**: Khuyến nghị phiên bản 3.10 trở lên.
@@ -46,7 +46,7 @@ Dự án triển khai, so sánh và đánh giá hai thuật toán:
 
 ---
 
-## 📊 Kết Quả So Sánh Định Lượng
+## Kết Quả So Sánh Định Lượng
 
 Dưới đây là kết quả đo đạc trung bình trên bộ dữ liệu ảnh thử nghiệm:
 
@@ -79,7 +79,13 @@ Dưới đây là kết quả đo đạc trung bình trên bộ dữ liệu ản
 
 ---
 
-## 👨‍🎓 Tác giả
+## Tác giả
 * Họ và tên: **Nguyễn Đình Huy**
 * Mã số sinh viên: **2474802010140**
+* Khoa: Công Nghệ Thông Tin
+* Trường Đại học Văn Lang (VLU)
+## Đồng tác giả
+* Họ và tên: **Lê Quyết Tiến**
+* Mã số sinh viên: **2474802010386**
+* Khoa: Công Nghệ Thông Tin
 * Trường Đại học Văn Lang (VLU)
