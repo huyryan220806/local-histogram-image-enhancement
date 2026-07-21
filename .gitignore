@@ -19,3 +19,8 @@ ENV/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Project input, output and PDF files
+input/
+output/
+*.pdf
