@@ -57,7 +57,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 INPUT_DIR = None
 for d in os.listdir(BASE_DIR):
     p = os.path.join(BASE_DIR, d)
-    if os.path.isdir(p) and d != 'output' and d != '__pycache__':
+    if os.path.isdir(p) and d != 'output' and d != '__pycache__' and d != '.git' and d != 'bin' and d != 'BaoCao':
         INPUT_DIR = p
         break
 

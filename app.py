@@ -771,6 +771,7 @@ else:
 
 st.markdown("""
 <div class="footer">
-    Đồ án Nhập Môn Xử Lý Ảnh Số · Nguyễn Đình Huy · MSSV 2474802010140 · Trường Đại học Văn Lang
+    Đồ án Nhập Môn Xử Lý Ảnh Số · Trường Đại học Văn Lang <br>
+    Nguyễn Đình Huy · MSSV 2474802010140 | Lê Quyết Tiến · MSSV 2474802010386
 </div>
 """, unsafe_allow_html=True)

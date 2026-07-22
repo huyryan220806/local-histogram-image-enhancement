@@ -24,3 +24,7 @@ Thumbs.db
 input/
 output/
 *.pdf
+~$*
+bin/
+
+

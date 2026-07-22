@@ -1,121 +1,165 @@
 # Đồ Án Cuối Kỳ: Tăng Cường Ảnh Cục Bộ Dựa Trên Histogram
 
-Đồ án môn học **Nhập Môn Xử Lý Ảnh Số** với đề tài: **"Tăng cường ảnh cục bộ dựa trên histogram"**, nhằm mục tiêu cải thiện chất lượng chi tiết cục bộ trong các hình ảnh có độ sáng hoặc độ tương phản không đồng đều.
-
-Dự án triển khai, so sánh và đánh giá hai thuật toán:
-1. **Global Histogram Equalization (HE)** — Cân bằng histogram toàn cục.
-2. **Contrast Limited Adaptive Histogram Equalization (CLAHE)** — Cân bằng histogram cục bộ thích ứng giới hạn độ tương phản (cả phiên bản tự cài đặt và phiên bản OpenCV).
-
----
-
-## Thông Tin Lớp Học Phần
-
-| | |
-| :--- | :--- |
-| **Lớp học phần** | 253_71ITAI40803_01 |
-| **Môn học** | Nhập Môn Xử Lý Ảnh Số |
-| **GVHD** | TS. Vũ Thanh Hiền |
+[![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.13.0-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.59.2-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![NumPy](https://img.shields.io/badge/NumPy-2.3.4-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-3.10.7-11557C?style=for-the-badge)](https://matplotlib.org/)
+[![Microsoft Word](https://img.shields.io/badge/Microsoft_Word-1.2.0-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/python-openxml/python-docx)
+[![PowerPoint](https://img.shields.io/badge/PowerPoint-1.0.2-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/scanny/python-pptx)
+[![Canva](https://img.shields.io/badge/Canva_Pro-Enabled-00C4CC?style=for-the-badge&logo=canva&logoColor=white)](https://www.canva.com/)
+[![Git](https://img.shields.io/badge/Git-2.51.2-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
 
 ---
 
-## Thành Viên Nhóm
+## 📌 Thông Tin Đồ Án
 
-| STT | Họ và tên | MSSV |
-| :---: | :--- | :--- |
-| 1 | Nguyễn Đình Huy | 2474802010140 |
-| 2 | Lê Quyết Tiến | 2474802010386 |
-
-**Trường Đại học Văn Lang (VLU)**
-
----
-
-## Cấu Trúc Mã Nguồn
-
-| File | Chức năng |
-| :--- | :--- |
-| `utils.py` | Các hàm bổ trợ: Đọc/ghi ảnh Unicode (hỗ trợ tiếng Việt), vẽ histogram, hiển thị ảnh. |
-| `global_enhancement.py` | Triển khai cân bằng histogram toàn cục (Global HE) tự thiết kế và OpenCV trên ảnh xám và ảnh màu. |
-| `local_enhancement.py` | Triển khai thuật toán CLAHE tự thiết kế và OpenCV trên ảnh xám và ảnh màu. Thử nghiệm thay đổi tham số. |
-| `comparison.py` | Tính toán 5 chỉ số đánh giá (Mean, Std Dev, Entropy, PSNR, SSIM) và vẽ các biểu đồ so sánh. |
-| `report_generator.py` | Xuất báo cáo tổng kết, bảng chỉ số định lượng, và biểu đồ so sánh tổng hợp dưới dạng hình ảnh và văn bản. |
-| `main.py` | File khởi chạy chính của toàn bộ hệ thống xử lý ảnh (chạy batch trên thư mục). |
-| `app.py` | Giao diện web Streamlit cho phép upload ảnh và tương tác trực tiếp. |
+* **Môn học**: Nhập Môn Xử Lý Ảnh Số (Digital Image Processing)
+* **Lớp học phần**: `253_71ITAI40803_01`
+* **Giảng viên hướng dẫn**: **TS. Vũ Thanh Hiền**
+* **Trường**: Đại học Văn Lang (VLU)
+* **Chủ đề 6**: **"Tăng cường ảnh cục bộ dựa trên histogram"**
 
 ---
 
-## Giao Diện Web (Streamlit)
+## 👥 Thành Viên Nhóm & Phân Công Nhiệm Vụ
 
-Dự án có tích hợp giao diện web sử dụng **Streamlit**, cho phép người dùng:
+| STT | Họ và Tên | MSSV | Vai Trò | Nội Dung Công Việc Phụ Trách | Hoàn Thành |
+| :---: | :--- | :---: | :---: | :--- | :---: |
+| **1** | **Nguyễn Đình Huy** | `2474802010140` | Nhóm trưởng | Nghiên cứu Global HE, thiết kế kiến trúc phần mềm, lập trình module `global_enhancement.py`, `comparison.py` (tính 5 metrics), phát triển Web App Streamlit (`app.py`) và tổng hợp Báo cáo Word. | 100% |
+| **2** | **Lê Quyết Tiến** | `2474802010386` | Thành viên | Nghiên cứu CLAHE cục bộ, lập trình module `local_enhancement.py` (CLAHE & khảo sát đa tham số), chạy thực nghiệm thu thập số liệu, tối ưu UI Streamlit và thiết kế Slide Canva Pro. | 100% |
 
-- **Upload ảnh** từ máy tính (JPG, PNG, BMP, TIFF)
-- **So sánh trực quan**: Ảnh gốc vs Global HE vs CLAHE cạnh nhau
-- **Điều chỉnh tham số**: clipLimit và tileGridSize bằng slider
-- **Xem Histogram và CDF**: Biểu đồ phân bố mức xám
-- **Xem Metrics**: PSNR, SSIM, Entropy, Std Dev với nhận xét tự động
-- **Thử nghiệm tham số**: Khám phá ảnh hưởng của nhiều bộ tham số CLAHE khác nhau
-- **Tải xuống**: Lưu ảnh kết quả và biểu đồ về máy
+---
 
-### Chạy giao diện Streamlit
+## 🛠️ Danh Mục Công Cụ & Thư Viện Sử Dụng (Tech Stack)
+
+| Logo / Công cụ | Tên Thư Viện & Công Cụ | Phiên Bản | Vai Trò & Chức Năng Trong Dự Án |
+| :---: | :--- | :---: | :--- |
+| ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white) | **Python** | `3.13.0` | Ngôn ngữ lập trình chính triển khai toàn bộ hệ thống xử lý ảnh và giao diện web. |
+| ![OpenCV](https://img.shields.io/badge/-OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white) | **OpenCV (opencv-python)** | `4.13.0` | Xử lý biến đổi ma trận ảnh, chuyển đổi không gian màu YCrCb, cân bằng HE và CLAHE. |
+| ![Streamlit](https://img.shields.io/badge/-Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white) | **Streamlit** | `1.59.2` | Framework xây dựng giao diện ứng dụng Web tương tác người dùng (`app.py`). |
+| ![NumPy](https://img.shields.io/badge/-NumPy-013243?style=flat-square&logo=numpy&logoColor=white) | **NumPy** | `2.3.4` | Tính toán đại số tuyến tính, biến đổi ma trận ảnh nhị phân và đọc/ghi file Unicode. |
+| ![Matplotlib](https://img.shields.io/badge/-Matplotlib-11557C?style=flat-square) | **Matplotlib** | `3.10.7` | Trực quan hóa biểu đồ Histogram, đường cong tích lũy CDF và biểu đồ cột so sánh metrics. |
+| ![Word](https://img.shields.io/badge/-python--docx-2B579A?style=flat-square&logo=microsoftword&logoColor=white) | **python-docx** | `1.2.0` | Tự động xuất file Báo cáo Word 12-15 trang chuẩn định lượng (`generate_report_docx.py`). |
+| ![PowerPoint](https://img.shields.io/badge/-python--pptx-B7472A?style=flat-square&logo=microsoftpowerpoint&logoColor=white) | **python-pptx** | `1.0.2` | Tự động tạo file Slide thuyết trình 12 slide 16:9 widescreen (`generate_slide_pptx.py`). |
+| ![Canva](https://img.shields.io/badge/-Canva_Pro-00C4CC?style=flat-square&logo=canva&logoColor=white) | **Canva Pro** | `Latest` | Import file `.pptx` và tùy chỉnh thiết kế Slide báo cáo chuyên nghiệp. |
+| ![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white) | **Visual Studio Code** | `1.95+` | Môi trường phát triển tích hợp (IDE) quản lý mã nguồn và Terminal. |
+| ![Git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white) | **Git & GitHub** | `2.51.2` | Quản lý phiên bản mã nguồn (VCS) và lưu trữ repository trực tuyến. |
+
+---
+
+## 📂 Cấu Trúc Mã Nguồn Project
+
+```text
+DoAnCK/
+├── input/                      # Thư mục chứa ảnh đầu vào
+│   └── MU_Trident.jpg          # Ảnh thử nghiệm chính
+├── output/                     # Kết quả xuất tự động
+│   ├── global/                 # Kết quả ảnh Global HE
+│   ├── local/                  # Kết quả ảnh CLAHE
+│   ├── comparison/             # Ảnh so sánh side-by-side & thử nghiệm tham số
+│   ├── histograms/             # Biểu đồ Histogram & đường CDF
+│   ├── metrics/                # Bảng chỉ số & biểu đồ tổng hợp
+│   └── bao_cao_ket_qua.txt     # Báo cáo kết quả định lượng dạng text
+├── utils.py                    # Đọc/ghi ảnh Unicode (tiếng Việt), tính histogram, CDF
+├── global_enhancement.py       # Cân bằng Histogram toàn cục (Global HE manual & OpenCV)
+├── local_enhancement.py        # Cân bằng Histogram cục bộ (CLAHE manual & OpenCV, khảo sát tham số)
+├── comparison.py               # Tính 5 chỉ số metrics (Mean, Std, Entropy, PSNR, SSIM) & vẽ biểu đồ
+├── report_generator.py         # Tạo bảng chỉ số định lượng và biểu đồ tổng hợp
+├── main.py                     # Script điều khiển chính (Pipeline chạy batch tự động)
+├── app.py                      # Giao diện Web tương tác Streamlit
+├── run_app.bat                 # File nhấp đúp chạy nhanh ứng dụng Web Streamlit
+├── generate_report_docx.py     # Script tạo tự động Báo cáo Word (.docx)
+├── generate_slide_pptx.py      # Script tạo tự động Slide PowerPoint (.pptx)
+├── .gitignore                  # Cấu hình bỏ qua các file tạm
+└── README.md                   # Tài liệu hướng dẫn dự án
+```
+
+---
+
+## 🚀 Hướng Dẫn Cài Đặt & Chạy Ứng Dụng
+
+### 1. Cài đặt môi trường
+Yêu cầu **Python 3.10 trở lên**. Cài đặt các thư viện phụ thuộc bằng lệnh:
+
+```bash
+pip install numpy opencv-python matplotlib streamlit python-docx python-pptx
+```
+
+---
+
+### 2. Khởi chạy Giao diện Web (Streamlit)
+
+#### **Cách 1: Khởi chạy từ Terminal (Khuyên dùng)**
+Mở Terminal tại thư mục dự án và gõ lệnh:
 
 ```bash
 streamlit run app.py
 ```
+*(Hoặc dùng lệnh đầy đủ: `py -3.13 -m streamlit run app.py`)*
 
-Sau đó mở trình duyệt tại: **http://localhost:8501**
+#### **Cách 2: Nhấp đúp chuột**
+Nhấp đúp chuột vào file **`run_app.bat`** trong thư mục dự án.
+
+Ứng dụng web sẽ tự động mở tại địa chỉ: **`http://localhost:8501`**
 
 ---
 
-## Hướng Dẫn Cài Đặt và Chạy
+### 3. Chạy Pipeline Batch (Command Line)
+Để xử lý hàng loạt tất cả ảnh trong thư mục `input/` và xuất kết quả ra thư mục `output/`:
 
-### 1. Yêu cầu hệ thống
-* **Python**: Khuyến nghị phiên bản 3.10 trở lên.
-* **Thư viện cần cài đặt**:
+```powershell
+$env:PYTHONIOENCODING='utf-8'
+py -3.13 main.py
+```
+
+---
+
+### 4. Tạo Báo Cáo Word & Slide PowerPoint
+* **Tạo file Báo cáo Word 12-15 trang**:
   ```bash
-  pip install numpy opencv-python matplotlib streamlit
+  py -3.13 generate_report_docx.py
   ```
+  *(Xuất file: `Do_An_Xu_Ly_Anh_So_Nhom_Huy_Tien_CapNhat.docx`)*
 
-### 2. Chạy xử lý batch (command line)
-1. Đặt các ảnh đầu vào cần tăng cường vào thư mục `input/`.
-2. Mở terminal tại thư mục dự án và chạy:
-   ```bash
-   python main.py
-   ```
-3. Xem kết quả được tạo tự động tại thư mục `output/`.
-
-### 3. Chạy giao diện web (Streamlit)
-```bash
-streamlit run app.py
-```
+* **Tạo file Slide PowerPoint 12 slide (import vào Canva Pro)**:
+  ```bash
+  py -3.13 generate_slide_pptx.py
+  ```
+  *(Xuất file: `Slide_Bao_Cao_XLAS_Nhom_Huy_Tien.pptx`)*
 
 ---
 
-## Kết Quả So Sánh Định Lượng
+## 📊 Kết Quả Đo Đạc Định Lượng Thực Nghiệm (`MU_Trident.jpg`)
 
-Dưới đây là kết quả đo đạc trung bình trên bộ dữ liệu ảnh thử nghiệm:
+Dưới đây là bảng kết quả đo đạc các chỉ số định lượng giữa hai phương pháp trên ảnh thử nghiệm **`MU_Trident.jpg`**:
 
-| Chỉ số | Ảnh gốc | Global HE | CLAHE | Nhận xét |
+| Chỉ số Đánh Giá (Metric) | Ảnh Gốc | Global HE | CLAHE | Nhận Xét Đánh Giá |
 | :--- | :---: | :---: | :---: | :--- |
-| **PSNR (dB)** | — | 11.19 | **35.25** | CLAHE giữ độ tương đồng cao với ảnh gốc, tránh méo ảnh. |
-| **SSIM** | 1.0000 | 0.7361 | **0.9906** | SSIM của CLAHE gần tuyệt đối (~0.99) — bảo toàn cấu trúc rất tốt. |
-| **Entropy** | 1.34 | 1.47 | **1.82** | CLAHE tăng lượng thông tin chi tiết đáng kể so với ảnh gốc và Global HE. |
-| **Độ lệch chuẩn** | 35.8 | 87.3 | 44.3 | Global HE làm tăng quá mức độ tương phản dẫn đến cháy sáng. |
+| **Mean (Độ sáng TB)** | 119.2 | 128.4 | 126.3 | Cả 2 phương pháp giúp cân bằng lại dải sáng trung bình. |
+| **Std Dev (Độ tương phản)** | 56.0 | 71.5 | 63.5 | Global HE tăng tương phản quá gắt; CLAHE giữ mức hài hòa. |
+| **Entropy (Lượng thông tin)** | 7.78 | 7.75 | **7.92** | **CLAHE vượt trội** (phong phú và nổi bật chi tiết nhất). |
+| **PSNR (dB)** | — | **22.12 dB** | 17.75 dB | Global HE giữ khoảng cách bình phương nhỏ hơn so với ảnh gốc. |
+| **SSIM (Tương đồng cấu trúc)** | 1.0000 | **0.9433** | 0.8663 | Global HE giữ cấu trúc phẳng; CLAHE làm nổi bật dải cục bộ. |
 
 ---
 
-## Đánh Giá Ưu và Nhược Điểm
+## 📈 Ưu Điểm & Hạn Chế Của Các Thuật Toán
 
-### 1. Global Histogram Equalization (Toàn cục)
-* **Ưu điểm**: Cực kỳ đơn giản, tốc độ tính toán nhanh, không cần tinh chỉnh tham số đầu vào.
-* **Nhược điểm**:
-  * Không hiệu quả đối với các ảnh có độ phân bổ ánh sáng không đồng đều.
-  * Dễ xảy ra hiện tượng cháy sáng ở vùng sáng và mất chi tiết ở vùng tối.
-  * Khuếch đại cả các hạt nhiễu (noise).
+### 1. Global Histogram Equalization (Global HE)
+* **Ưu điểm**: Thuật toán đơn giản, tốc độ tính toán cực nhanh, không cần điều chỉnh tham số đầu vào.
+* **Hạn chế**: Thất bại trên ảnh có độ phân bổ ánh sáng không đồng đều; dễ gây cháy sáng ở vùng đã sáng và làm nổi hạt nhiễu trên các vùng phẳng.
 
-### 2. CLAHE (Cục bộ)
+### 2. Contrast Limited Adaptive Histogram Equalization (CLAHE)
 * **Ưu điểm**:
-  * Cải thiện chi tiết cục bộ vô cùng hiệu quả, xử lý xuất sắc các vùng bóng tối hoặc chói sáng cục bộ.
-  * Giới hạn độ tương phản (clipLimit) giúp hạn chế tối đa việc khuếch đại nhiễu.
-  * Nội suy song tuyến tính (Bilinear Interpolation) loại bỏ các đường biên phân mảnh khối (block artifacts).
-* **Nhược điểm**:
-  * Thuật toán phức tạp hơn, tốn nhiều chi phí tính toán hơn.
-  * Cần lựa chọn các tham số phù hợp (clipLimit và tileGridSize) để đạt hiệu quả tối ưu cho từng loại ảnh.
+  * Cải thiện chi tiết cục bộ vượt trội tại các vùng tối hoặc bóng râm.
+  * Cơ chế **Clip Limit** giới hạn ngưỡng cắt dải histogram giúp ngăn ngừa khuếch đại nhiễu.
+  * **Nội suy song tuyến tính (Bilinear Interpolation)** xóa bỏ triệt để hiệu ứng phân khối (block artifacts) giữa các tile.
+  * Đạt độ entropy lượng thông tin cao nhất ($7.92$).
+* **Hạn chế**: Chi phí tính toán lớn hơn Global HE; cần lựa chọn các tham số (`clipLimit`, `tileGridSize`) phù hợp cho từng loại ảnh.
+
+---
+
+## 🎓 Trường Đại học Văn Lang (VLU) — Khoa Công Nghệ Thông Tin
+* **Giảng viên hướng dẫn**: TS. Vũ Thanh Hiền
+* **Sinh viên thực hiện**: Nguyễn Đình Huy & Lê Quyết Tiến
