@@ -9,7 +9,7 @@
 
 ---
 
-## 📌 Thông Tin Đồ Án
+## Thông Tin Đồ Án
 
 * **Môn học**: Nhập Môn Xử Lý Ảnh Số (Digital Image Processing)
 * **Lớp học phần**: `253_71ITAI40803_01`
@@ -19,7 +19,7 @@
 
 ---
 
-## 👥 Thành Viên Nhóm & Phân Công Nhiệm Vụ
+## Thành Viên Nhóm & Phân Công Nhiệm Vụ
 
 | MSSV | Họ và tên | Công Việc | Hoàn Thành (%) |
 | :---: | :--- | :--- | :---: |
@@ -28,7 +28,7 @@
 
 ---
 
-## 🛠️ Danh Mục Công Cụ & Thư Viện Sử Dụng (Tech Stack)
+## Danh Mục Công Cụ & Thư Viện Sử Dụng (Tech Stack)
 
 | Logo / Công cụ | Tên Thư Viện & Công Cụ | Phiên Bản | Vai Trò & Chức Năng Trong Dự Án |
 | :---: | :--- | :---: | :--- |
@@ -42,19 +42,10 @@
 
 ---
 
-## 📂 Cấu Trúc Mã Nguồn Project
+## Cấu Trúc Mã Nguồn Project
 
 ```text
 DoAnCK/
-├── input/                      # Thư mục chứa ảnh đầu vào
-│   └── MU_Trident.jpg          # Ảnh thử nghiệm chính
-├── output/                     # Kết quả xuất tự động
-│   ├── global/                 # Kết quả ảnh Global HE
-│   ├── local/                  # Kết quả ảnh CLAHE
-│   ├── comparison/             # Ảnh so sánh side-by-side & thử nghiệm tham số
-│   ├── histograms/             # Biểu đồ Histogram & đường CDF
-│   ├── metrics/                # Bảng chỉ số & biểu đồ tổng hợp
-│   └── bao_cao_ket_qua.txt     # Báo cáo kết quả định lượng dạng text
 ├── utils.py                    # Đọc/ghi ảnh Unicode (tiếng Việt), tính histogram, CDF
 ├── global_enhancement.py       # Cân bằng Histogram toàn cục (Global HE manual & OpenCV)
 ├── local_enhancement.py        # Cân bằng Histogram cục bộ (CLAHE manual & OpenCV, khảo sát tham số)
@@ -69,7 +60,7 @@ DoAnCK/
 
 ---
 
-## 🚀 Hướng Dẫn Cài Đặt & Chạy Ứng Dụng
+## Hướng Dẫn Cài Đặt & Chạy Ứng Dụng
 
 ### 1. Cài đặt môi trường
 Yêu cầu **Python 3.10 trở lên**. Cài đặt các thư viện phụ thuộc bằng lệnh:
@@ -107,7 +98,7 @@ py -3.13 main.py
 
 ---
 
-## 📊 Kết Quả Đo Đạc Định Lượng Thực Nghiệm (`MU_Trident.jpg`)
+## Kết Quả Đo Đạc Định Lượng Thực Nghiệm (MU_Trident.jpg)
 
 Dưới đây là bảng kết quả đo đạc các chỉ số định lượng giữa hai phương pháp trên ảnh thử nghiệm **`MU_Trident.jpg`**:
 
@@ -121,7 +112,7 @@ Dưới đây là bảng kết quả đo đạc các chỉ số định lượng
 
 ---
 
-## 📈 Ưu Điểm & Hạn Chế Của Các Thuật Toán
+## Ưu Điểm & Hạn Chế Của Các Thuật Toán
 
 ### 1. Global Histogram Equalization (Global HE)
 * **Ưu điểm**: Thuật toán đơn giản, tốc độ tính toán cực nhanh, không cần điều chỉnh tham số đầu vào.
@@ -137,6 +128,6 @@ Dưới đây là bảng kết quả đo đạc các chỉ số định lượng
 
 ---
 
-## 🎓 Trường Đại học Văn Lang (VLU) — Khoa Công Nghệ Thông Tin
+## Trường Đại học Văn Lang (VLU) — Khoa Công Nghệ Thông Tin
 * **Giảng viên hướng dẫn**: TS. Vũ Thanh Hiền
 * **Sinh viên thực hiện**: Nguyễn Đình Huy & Lê Quyết Tiến
