@@ -5,9 +5,6 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.59.2-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![NumPy](https://img.shields.io/badge/NumPy-2.3.4-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
 [![Matplotlib](https://img.shields.io/badge/Matplotlib-3.10.7-11557C?style=for-the-badge)](https://matplotlib.org/)
-[![Microsoft Word](https://img.shields.io/badge/Microsoft_Word-1.2.0-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/python-openxml/python-docx)
-[![PowerPoint](https://img.shields.io/badge/PowerPoint-1.0.2-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/scanny/python-pptx)
-[![Canva](https://img.shields.io/badge/Canva_Pro-Enabled-00C4CC?style=for-the-badge&logo=canva&logoColor=white)](https://www.canva.com/)
 [![Git](https://img.shields.io/badge/Git-2.51.2-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
 
 ---
@@ -26,8 +23,8 @@
 
 | STT | Họ và Tên | MSSV | Vai Trò | Nội Dung Công Việc Phụ Trách | Hoàn Thành |
 | :---: | :--- | :---: | :---: | :--- | :---: |
-| **1** | **Nguyễn Đình Huy** | `2474802010140` | Nhóm trưởng | Nghiên cứu Global HE, thiết kế kiến trúc phần mềm, lập trình module `global_enhancement.py`, `comparison.py` (tính 5 metrics), phát triển Web App Streamlit (`app.py`) và tổng hợp Báo cáo Word. | 100% |
-| **2** | **Lê Quyết Tiến** | `2474802010386` | Thành viên | Nghiên cứu CLAHE cục bộ, lập trình module `local_enhancement.py` (CLAHE & khảo sát đa tham số), chạy thực nghiệm thu thập số liệu, tối ưu UI Streamlit và thiết kế Slide Canva Pro. | 100% |
+| **1** | **Nguyễn Đình Huy** | `2474802010140` | Nhóm trưởng | Nghiên cứu Global HE, thiết kế kiến trúc phần mềm, lập trình module `global_enhancement.py`, `comparison.py` (tính 5 metrics), phát triển Web App Streamlit (`app.py`) và tổng hợp Báo cáo. | 100% |
+| **2** | **Lê Quyết Tiến** | `2474802010386` | Thành viên | Nghiên cứu CLAHE cục bộ, lập trình module `local_enhancement.py` (CLAHE & khảo sát đa tham số), chạy thực nghiệm thu thập số liệu, tối ưu UI Streamlit và thiết kế Slide. | 100% |
 
 ---
 
@@ -40,9 +37,6 @@
 | ![Streamlit](https://img.shields.io/badge/-Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white) | **Streamlit** | `1.59.2` | Framework xây dựng giao diện ứng dụng Web tương tác người dùng (`app.py`). |
 | ![NumPy](https://img.shields.io/badge/-NumPy-013243?style=flat-square&logo=numpy&logoColor=white) | **NumPy** | `2.3.4` | Tính toán đại số tuyến tính, biến đổi ma trận ảnh nhị phân và đọc/ghi file Unicode. |
 | ![Matplotlib](https://img.shields.io/badge/-Matplotlib-11557C?style=flat-square) | **Matplotlib** | `3.10.7` | Trực quan hóa biểu đồ Histogram, đường cong tích lũy CDF và biểu đồ cột so sánh metrics. |
-| ![Word](https://img.shields.io/badge/-python--docx-2B579A?style=flat-square&logo=microsoftword&logoColor=white) | **python-docx** | `1.2.0` | Tự động xuất file Báo cáo Word 12-15 trang chuẩn định lượng (`generate_report_docx.py`). |
-| ![PowerPoint](https://img.shields.io/badge/-python--pptx-B7472A?style=flat-square&logo=microsoftpowerpoint&logoColor=white) | **python-pptx** | `1.0.2` | Tự động tạo file Slide thuyết trình 12 slide 16:9 widescreen (`generate_slide_pptx.py`). |
-| ![Canva](https://img.shields.io/badge/-Canva_Pro-00C4CC?style=flat-square&logo=canva&logoColor=white) | **Canva Pro** | `Latest` | Import file `.pptx` và tùy chỉnh thiết kế Slide báo cáo chuyên nghiệp. |
 | ![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white) | **Visual Studio Code** | `1.95+` | Môi trường phát triển tích hợp (IDE) quản lý mã nguồn và Terminal. |
 | ![Git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white) | **Git & GitHub** | `2.51.2` | Quản lý phiên bản mã nguồn (VCS) và lưu trữ repository trực tuyến. |
 
@@ -69,8 +63,6 @@ DoAnCK/
 ├── main.py                     # Script điều khiển chính (Pipeline chạy batch tự động)
 ├── app.py                      # Giao diện Web tương tác Streamlit
 ├── run_app.bat                 # File nhấp đúp chạy nhanh ứng dụng Web Streamlit
-├── generate_report_docx.py     # Script tạo tự động Báo cáo Word (.docx)
-├── generate_slide_pptx.py      # Script tạo tự động Slide PowerPoint (.pptx)
 ├── .gitignore                  # Cấu hình bỏ qua các file tạm
 └── README.md                   # Tài liệu hướng dẫn dự án
 ```
@@ -83,7 +75,7 @@ DoAnCK/
 Yêu cầu **Python 3.10 trở lên**. Cài đặt các thư viện phụ thuộc bằng lệnh:
 
 ```bash
-pip install numpy opencv-python matplotlib streamlit python-docx python-pptx
+pip install numpy opencv-python matplotlib streamlit
 ```
 
 ---
@@ -112,21 +104,6 @@ Nhấp đúp chuột vào file **`run_app.bat`** trong thư mục dự án.
 $env:PYTHONIOENCODING='utf-8'
 py -3.13 main.py
 ```
-
----
-
-### 4. Tạo Báo Cáo Word & Slide PowerPoint
-* **Tạo file Báo cáo Word 12-15 trang**:
-  ```bash
-  py -3.13 generate_report_docx.py
-  ```
-  *(Xuất file: `Do_An_Xu_Ly_Anh_So_Nhom_Huy_Tien_CapNhat.docx`)*
-
-* **Tạo file Slide PowerPoint 12 slide (import vào Canva Pro)**:
-  ```bash
-  py -3.13 generate_slide_pptx.py
-  ```
-  *(Xuất file: `Slide_Bao_Cao_XLAS_Nhom_Huy_Tien.pptx`)*
 
 ---
 
