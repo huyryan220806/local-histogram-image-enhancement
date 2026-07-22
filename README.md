@@ -21,10 +21,10 @@
 
 ## 👥 Thành Viên Nhóm & Phân Công Nhiệm Vụ
 
-| STT | Họ và Tên | MSSV | Vai Trò | Nội Dung Công Việc Phụ Trách | Hoàn Thành |
-| :---: | :--- | :---: | :---: | :--- | :---: |
-| **1** | **Nguyễn Đình Huy** | `2474802010140` | Nhóm trưởng | Nghiên cứu Global HE, thiết kế kiến trúc phần mềm, lập trình module `global_enhancement.py`, `comparison.py` (tính 5 metrics), phát triển Web App Streamlit (`app.py`) và tổng hợp Báo cáo. | 100% |
-| **2** | **Lê Quyết Tiến** | `2474802010386` | Thành viên | Nghiên cứu CLAHE cục bộ, lập trình module `local_enhancement.py` (CLAHE & khảo sát đa tham số), chạy thực nghiệm thu thập số liệu, tối ưu UI Streamlit và thiết kế Slide. | 100% |
+| MSSV | Họ và tên | Công Việc | Hoàn Thành (%) |
+| :---: | :--- | :--- | :---: |
+| `2474802010140` | **Nguyễn Đình Huy – Nhóm trưởng** | Nghiên cứu Global HE, thiết kế kiến trúc phần mềm, lập trình module `global_enhancement.py`, `comparison.py` (tính 5 metrics), phát triển Web App Streamlit (`app.py`), tổng hợp báo cáo Word và làm Canva. | 100 |
+| `2474802010386` | **Lê Quyết Tiến** | Nghiên cứu CLAHE cục bộ, lập trình module `local_enhancement.py` (CLAHE & khảo sát đa tham số), chạy thực nghiệm thu thập số liệu, tối ưu UI Streamlit. | 100 |
 
 ---
 
